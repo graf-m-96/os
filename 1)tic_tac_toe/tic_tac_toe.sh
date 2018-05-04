@@ -15,10 +15,19 @@ points=(0 1 2 3 4 5 6 7 8)
 
 function quit {
     clearStatus
-    echo -en "\E[0;0fПобедили $1"
+    showResult $1
     showCursor
     echo -en '\E[5;0f'
     exit
+}
+
+function showResult {
+    if [[ $1 == 'x' || $1 == 'o' ]]
+    then
+        echo -en "\E[0;0fПобедили $1"
+    else
+        echo "Ничья"
+    fi
 }
 
 function parsePoint() {
@@ -122,6 +131,21 @@ function checkResult() {
     if [[ ${points[2]} == ${points[4]} && ${points[2]} == ${points[6]} ]]
     then
         quit ${points[2]}
+    fi
+
+    # Ничья
+    flagForDraw=1
+    for i in ${points[@]}
+    do
+        if [[ $i != x && $i != o ]]
+        then
+            flagForDraw=0
+            break
+        fi
+    done
+    if [[ $flagForDraw == 1 ]]
+    then
+        quit
     fi
 }
 
