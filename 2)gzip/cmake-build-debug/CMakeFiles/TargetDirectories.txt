@@ -1,0 +1,3 @@
+/home/graf-m/Рабочий стол/os/2)gzip/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/graf-m/Рабочий стол/os/2)gzip/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/graf-m/Рабочий стол/os/2)gzip/cmake-build-debug/CMakeFiles/2_gzip.dir
