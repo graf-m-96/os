@@ -24,6 +24,9 @@ int main(int argc, char* argv[]) {
             zeroCount = 0;
         }
     }
+    if (zeroCount != 0) {
+        fseek(fileStream, zeroCount, 1);
+    }
 
     return 0;
 }
